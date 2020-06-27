@@ -1,7 +1,6 @@
 ﻿using GitHub.Models;
 using GitHub.ViewModel;
 using Microsoft.AspNet.Identity;
-using System;
 using System.Linq;
 using System.Web.Mvc;
 
@@ -16,7 +15,10 @@ namespace GitHub.Controllers
         {
             _context = new ApplicationDbContext();
         }
+
+        
         // GET: Gigs
+        [Authorize]
         public ActionResult Create()
         {
             var viewModel = new GigsFormViewModel
@@ -29,12 +31,18 @@ namespace GitHub.Controllers
         [Authorize]
         public ActionResult Create(GigsFormViewModel viewModel)
         {
-           
-            var genre = _context.Genre.Single(g => g.Id == viewModel.Genre);
+            if (!ModelState.IsValid)
+            {
+                //Genres need to populate first
+                viewModel.Genres = _context.Genre.ToList();
+                return View("Create", viewModel);
+            }
+
+
             var gigs = new Gigs
             {
                 ArtistId = User.Identity.GetUserId(),
-                DateTime =DateTime.Parse(string.Format("{0} {1}", viewModel.Date,viewModel.Time)),
+                DateTime =viewModel.GetDateTime(),
                 GenreId=viewModel.Genre,
                 Venue=viewModel.Venue
 
@@ -43,5 +51,7 @@ namespace GitHub.Controllers
             _context.SaveChanges();
             return RedirectToAction("Index", "Home");
         }
+
+
     }
 }
