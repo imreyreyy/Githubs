@@ -29,6 +29,7 @@ namespace GitHub.Controllers
         }
         [HttpPost]
         [Authorize]
+        [ValidateAntiForgeryToken]
         public ActionResult Create(GigsFormViewModel viewModel)
         {
             if (!ModelState.IsValid)
