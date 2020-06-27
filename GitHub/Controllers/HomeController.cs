@@ -1,16 +1,25 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using GitHub.Models;
+using System;
+using System.Data.Entity;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 
 namespace GitHub.Controllers
 {
+
     public class HomeController : Controller
     {
+        private ApplicationDbContext _context;
+        public HomeController()
+        {
+            _context = new ApplicationDbContext();
+        }
         public ActionResult Index()
         {
-            return View();
+            var upgigs = _context.Gigs
+                .Include(a => a.Artist)
+                .Where(g=>g.DateTime>DateTime.Now);
+            return View(upgigs);
         }
 
         public ActionResult About()

@@ -218,6 +218,10 @@
     <Compile Include="Migrations\202006250603501_AddFKtoGiggModel.Designer.cs">
       <DependentUpon>202006250603501_AddFKtoGiggModel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202006271259285_AddNameToAppUser.cs" />
+    <Compile Include="Migrations\202006271259285_AddNameToAppUser.Designer.cs">
+      <DependentUpon>202006271259285_AddNameToAppUser.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
@@ -316,6 +320,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202006250603501_AddFKtoGiggModel.resx">
       <DependentUpon>202006250603501_AddFKtoGiggModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202006271259285_AddNameToAppUser.resx">
+      <DependentUpon>202006271259285_AddNameToAppUser.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
