@@ -18,6 +18,7 @@ namespace GitHub.Controllers
         {
             var upgigs = _context.Gigs
                 .Include(a => a.Artist)
+                .Include(a=>a.Genre)
                 .Where(g=>g.DateTime>DateTime.Now);
             return View(upgigs);
         }
