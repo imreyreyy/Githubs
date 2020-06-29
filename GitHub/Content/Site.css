@@ -87,6 +87,7 @@ textarea {
     outline: 0;
      -webkit-box-shadow: none; 
      box-shadow: none; 
+     height: 41px;
 }
 
 
@@ -167,4 +168,12 @@ h6,
 .pull-right {
 
     float:right;
+}
+.gigs > li .actions {
+    font-size:13px;
+    display:none
+}
+.gigs > li:hover .actions {
+    
+    display:block;
 }
