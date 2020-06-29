@@ -77,9 +77,9 @@ textarea {
 
 }
 .btn {
-    border-radius:9px;
-    padding:7px 15px;
-    font-size:16px;
+    /*border-radius:9px;
+    padding:7px 15px;*/
+    /*font-size:16px;*/
 }
 
 .form-control:focus {
@@ -164,3 +164,7 @@ h6,
     .gigs > li .details .genre {
         font-size:12px;
     }
+.pull-right {
+
+    float:right;
+}

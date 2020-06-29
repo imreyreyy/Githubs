@@ -1,0 +1,18 @@
+﻿@model IEnumerable<GitHub.Models.ApplicationUser>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+
+<table class="table">
+   
+
+@foreach (var artist in Model) {
+  <li>@artist.Name</li>
+}
+
+</table>
