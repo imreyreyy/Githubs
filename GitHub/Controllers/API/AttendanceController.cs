@@ -4,7 +4,7 @@ using Microsoft.AspNet.Identity;
 using System.Linq;
 using System.Web.Http;
 
-namespace GitHub.Controllers
+namespace GitHub.Controllers.API
 {
 
     [Authorize]

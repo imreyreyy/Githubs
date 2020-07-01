@@ -240,3 +240,7 @@ ModelManifest.xml
 
 # FAKE - F# Make
 .fake/
+/GitHub/Models/UserNotification.cs
+/GitHub/Models/NotificationType.cs
+/GitHub/Models/Notification.cs
+/GitHub/Controllers/API/NotificationController.cs

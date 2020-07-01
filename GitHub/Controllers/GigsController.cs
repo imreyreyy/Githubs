@@ -25,7 +25,7 @@ namespace GitHub.Controllers
             var userId = User.Identity.GetUserId();
 
             var mine = _context.Gigs
-                .Where(m => m.ArtistId == userId && m.DateTime > DateTime.Now)
+                .Where(m => m.ArtistId == userId && m.DateTime > DateTime.Now && !m.IsCanceled)
                 .Include(g => g.Genre)
                 .ToList();
 
